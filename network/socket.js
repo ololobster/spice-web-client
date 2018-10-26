@@ -122,11 +122,6 @@ wdi.Socket = $.spcExtend(wdi.EventObject.prototype, {
 	},
 	
 	encode_message: function(mess) {
-		if(!this.binary) {
-			var arr = Base64.encode(mess);
-			return arr;
-		} 
-		
 		var len = mess.length;
 		
 		var buffer = new ArrayBuffer(len);

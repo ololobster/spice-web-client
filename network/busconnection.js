@@ -86,10 +86,7 @@ wdi.BusConnection = $.spcExtend(wdi.EventObject.prototype, {
 			'raw',
             this._vdiBusToken
 		);
-		var websocketProtocol = 'base64';
-		if (this.binary) {
-			websocketProtocol = 'binary';
-		}
+		websocketProtocol = 'binary';
 		this.ws.connect(url, websocketProtocol);
 
 		wdi.Debug.log("BusConnection: using protocol: " + websocketProtocol);
@@ -113,14 +110,10 @@ wdi.BusConnection = $.spcExtend(wdi.EventObject.prototype, {
 		this.ws.onMessage(function(e) {
 			var message;
 			var result;
-			if (!self.binary) {
-				message = Base64.decodeStr(e.data);
-			} else {
-				message = String.fromCharCode.apply(null, new Uint8Array(e.data));
-				// Fix accented chars
-				// [ http://stackoverflow.com/questions/5396560/how-do-i-convert-special-utf-8-chars-to-their-iso-8859-1-equivalent-using-javasc ]
-				message = decodeURIComponent(escape(message));
-			}
+			message = String.fromCharCode.apply(null, new Uint8Array(e.data));
+			// Fix accented chars
+			// [ http://stackoverflow.com/questions/5396560/how-do-i-convert-special-utf-8-chars-to-their-iso-8859-1-equivalent-using-javasc ]
+			message = decodeURIComponent(escape(message));
 			var subChunks = message.split("\0");
 			if (subChunks.length == 1) {
 				// there is no \0 in the full message, add it to the queue
@@ -197,10 +190,6 @@ wdi.BusConnection = $.spcExtend(wdi.EventObject.prototype, {
 	},
 
 	_send: function(message) {
-		if (!this.binary) {
-			this.ws.send(Base64.encodeStr(message));
-		} else {
-			this.ws.send(message);
-		}
+		this.ws.send(message);
 	}
 });

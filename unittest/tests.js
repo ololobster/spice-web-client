@@ -20,8 +20,6 @@ suite("tests suite", function () {
 				//region fakes
 				window = domWindow;
 				fakeWorkerProcess();
-				Modernizr = {};
-				Modernizr['websocketsbinary'] = true;
 				WebSocket = require("websocket").client;
 
 				//endregion fakes
@@ -30,7 +28,6 @@ suite("tests suite", function () {
 				sinon = require("sinon");
 				assert = require("chai").assert;
 
-				require("../lib/base64"),
 				Canvas = require('canvas'),
 				Image = Canvas.Image,
 				BigInteger = require("../lib/biginteger").BigInteger,
