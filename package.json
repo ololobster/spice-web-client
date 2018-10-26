@@ -5,8 +5,7 @@
   "main": "src/spiceproxy.js",
   "author": "eyeOS",
   "homepage": "https://github.com/ololobster/spice-web-client",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "eyeos-gruntfile": "*",
     "grunt": "0.4.5",
