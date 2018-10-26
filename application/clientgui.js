@@ -120,8 +120,17 @@ wdi.ClientGui = $.spcExtend(wdi.EventObject.prototype, {
 	},
 
 	checkFeatures: function() {
-		if (!Modernizr.canvas || !Modernizr.websockets) {
-			alert('Your Browser is not compatible with WDI. Visit ... for a list of compatible browsers');
+		var canvas_el = document.createElement("canvas");
+		if (canvas_el.getContext === undefined) {
+			alert("Your browser do not support canvas.");
+			return false;
+		}
+		if (window.WebSocket === undefined) {
+			alert("Your browser do not support WebSocket.");
+			return false;
+		}
+		if (!("binaryType" in WebSocket.prototype)) {
+			alert("Your browser do not support binary WebSocket.");
 			return false;
 		}
 		return true;
