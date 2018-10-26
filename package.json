@@ -1,10 +1,10 @@
 {
-  "name": "eyeos-spiceproxy",
+  "name": "spice-web-client",
   "version": "0.0.156",
   "description": "spice client network stack library",
   "main": "src/spiceproxy.js",
   "author": "eyeOS",
-  "homepage": "http://www.eyeos.com",
+  "homepage": "https://github.com/ololobster/spice-web-client",
   "dependencies": {
   },
   "devDependencies": {
