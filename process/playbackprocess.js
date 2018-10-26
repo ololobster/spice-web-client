@@ -1,7 +1,7 @@
 wdi.PlaybackProcess = $.spcExtend(wdi.EventObject.prototype, {
 	_lastApp: null,
 	started: false,
-	minBuffSize: 1024*32,
+	minBuffSize: 1024*30,
 	frequency: null,
 	channels: null,
 	audioContext: null,
