@@ -1,6 +1,6 @@
 {
   "name": "spice-web-client",
-  "version": "0.0.156",
+  "version": "0.0.157",
   "description": "spice client network stack library",
   "main": "src/spiceproxy.js",
   "author": "eyeOS",
