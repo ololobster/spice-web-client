@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
-var path = require('path');
+var fs = require("fs");
+var path = require("path");
 
 // change to parent directory so all paths are relative to the top dir
 process.chdir(path.dirname(__dirname));
@@ -9,6 +9,7 @@ process.chdir(path.dirname(__dirname));
 var targetFile = path.join(__dirname, "spice_web_client.js");
 
 var files = [
+    "spiceproxy/requirements.js",
     "lib/jsbn.js",
     "lib/jsbn2.js",
     "lib/sha1.js",
