@@ -5,14 +5,27 @@
   "main": "src/spiceproxy.js",
   "author": "eyeOS",
   "homepage": "https://github.com/ololobster/spice-web-client",
-  "dependencies": {},
+  "dependencies": {
+    "biginteger": "^1.0.3",
+    "jquery": "^2.0.3",
+    "jquery-mousewheel": "^3.1.13",
+    "jquery.nok": "^1.1.0",
+    "jsbn": "^1.1.0"
+  },
   "devDependencies": {
     "eyeos-gruntfile": "*",
     "grunt": "0.4.5",
     "grunt-init": "0.3.2",
-    "mocha": "2.4.5"
+    "mocha": "2.4.5",
+    "napa": "^3.0.0"
+  },
+  "napa": {
+    "bowser_1_1_0": "lancedikson/bowser#1.1.0",
+    "pixastic_178dd7313b": "jseidelin/pixastic#178dd7313b",
+    "prettyprint": "padolsey-archive/prettyprint.js"
   },
   "scripts": {
+    "install": "napa",
     "postinstall": "node spiceproxy/concatenator.js"
   }
 }
