@@ -84,7 +84,7 @@ var files = [
     "translation.js"
 ];
 
-var exportString = "\nmodule.exports = wdi; \n";
+var exportString = "\nexports.wdi = wdi;\nexports.translations = translations;\n";
 
 console.log("Will generate %s", targetFile);
 if (fs.existsSync(targetFile)) {
