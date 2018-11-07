@@ -81,23 +81,17 @@ var files = [
     "flexvdi/inactivity.js",
     "flexvdi/flexvdi.js",
     "flexvdi/extwin.js",
-    "translation.js"
+    "translation.js",
+    "spiceproxy/exports.js"
 ];
-
-var exportString = "\nexports.wdi = wdi;\nexports.translations = translations;\n";
 
 console.log("Will generate %s", targetFile);
 if (fs.existsSync(targetFile)) {
 	fs.unlinkSync(targetFile);
 }
-
 files.forEach(function (file) {
 	var data = fs.readFileSync(file);
 	console.log('... appending %s', file);
 	fs.appendFileSync(targetFile, data);
 });
-
-console.log("Done! Appending module.exports line...");
-fs.appendFileSync(targetFile, exportString);
-
 console.log("Finish... Everything is stored in %s", targetFile);
