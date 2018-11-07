@@ -86,7 +86,7 @@ wdi.ClientGui = $.spcExtend(wdi.EventObject.prototype, {
 
 		//load magnifier background
 		this.magnifierBackground = window.$('<img/>');
-		this.magnifierBackground.attr('src', 'resources/magnifier.png');
+		this.magnifierBackground.attr('src', wdi.resourcesPath + "magnifier.png");
 		this.initSound();
 		this.inputManager = c.inputManager || new wdi.InputManager({ stuckKeysHandler: this.stuckKeysHandler, window: $(window)});
 		this.inputManager.setCurrentWindow(window);
