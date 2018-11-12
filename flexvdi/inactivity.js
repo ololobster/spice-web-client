@@ -1,2 +1,2 @@
 var inactivityTimeout = 0;
-var inactivityGrace = 30;
+var inactivityGrace = 5 * 60;
